@@ -29,4 +29,10 @@ export class AppComponent {
       this.errorMessage = "QRコードの生成に失敗しました";
     }
   }
+
+  clear() {
+    this.text = "";
+    this.qrDataUrl = "";
+    this.errorMessage = "";
+  }
 }

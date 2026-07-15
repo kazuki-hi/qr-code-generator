@@ -1,26 +1,25 @@
 <main class="app">
-  <h1>QR Code Generator</h1>
+    <h1>QR Code Generator</h1>
 
-  <div class="card">
-    <textarea
-      [(ngModel)]="text"
-      placeholder="テキストまたは URL を入力"
-      rows="4"
-    ></textarea>
+    <div class="card">
+        <textarea [(ngModel)]="text" placeholder="テキストまたは URL を入力" rows="4"></textarea>
 
-    <button class="generate" (click)="generate()">生成</button>
+        <div class="actions">
+            <button class="clear" (click)="clear()">クリア</button>
+            <button class="generate" (click)="generate()">生成</button>
+        </div>
 
-    @if (errorMessage) {
-      <p class="error">{{ errorMessage }}</p>
-    }
+        @if (errorMessage) {
+        <p class="error">{{ errorMessage }}</p>
+        }
 
-    @if (qrDataUrl) {
-      <div class="result">
-        <img [src]="qrDataUrl" alt="生成された QR コード">
-        <a class="download" [href]="qrDataUrl" download="qrcode.png">
-          ダウンロード
-        </a>
-      </div>
-    }
-  </div>
+        @if (qrDataUrl) {
+        <div class="result">
+            <img [src]="qrDataUrl" alt="生成された QR コード">
+            <a class="download" [href]="qrDataUrl" download="qrcode.png">
+                ダウンロード
+            </a>
+        </div>
+        }
+    </div>
 </main>
